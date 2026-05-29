@@ -16,7 +16,7 @@ jobs:
 
       - name: otestuj appku
         run: |
-          docker run -d -p 8080:8080 --name test road-devops
+          docker run -d --rm -p 8080:8080 --name test road-devops
           sleep 5
           curl --retry 5 --retry-delay 2 --retry-connrefused http://localhost:8080
           docker stop test
