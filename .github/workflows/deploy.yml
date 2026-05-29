@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: postav Docker image
-        run: docker build -t devops-projekt .
+        run: docker build -t road-devops .
 
       - name: Otestuj appku
         run: |
