@@ -18,5 +18,5 @@ jobs:
         run: |
           docker run -d -p 8080:8080 --name test road-devops
           sleep 5
-	  curl --retry 5 --retry-delay 2 http://localhost:8080
+	 curl --retry 5 --retry-delay 2 http://localhost:8080
           docker stop test
