@@ -1,0 +1,22 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stáhni kód
+        uses: actions/checkout@v3
+
+      - name: Postav Docker image
+        run: docker build -t devops-projekt .
+
+      - name: Otestuj appku
+        run: |
+          docker run -d -p 8080:8080 --name test devops-projekt
+          sleep 2
+          curl http://localhost:8080
+          docker stop test
