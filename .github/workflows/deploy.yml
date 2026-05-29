@@ -8,10 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Stáhni kód
-        uses: actions/checkout@v3
+      - name: stahne kod
+        uses: actions/checkout@v4
 
-      - name: Postav Docker image
+      - name: postav Docker image
         run: docker build -t devops-projekt .
 
       - name: Otestuj appku
